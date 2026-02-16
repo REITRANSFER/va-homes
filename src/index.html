@@ -207,92 +207,95 @@
             <button class="continue-button" onclick="validateAndContinue()">Continue →</button>
         </div>
 
-        <!-- Step 2: Ownership -->
+        <!-- Step 2: Market Status -->
         <div class="step" data-step="2">
             <button class="back-button" onclick="goBack()">← Back</button>
             <div class="step-number">Question 2 of 5</div>
-            <h2>Are you the owner of this property?</h2>
+            <h2>Is this home currently listed on the market?</h2>
             <div class="button-group">
-                <button class="option-button" onclick="selectOption('ownership', 'Yes, sole owner')">
-                    Yes, I am the sole owner
+                <button class="option-button" onclick="selectOption('marketStatus', 'Not listed')">
+                    No, it's not listed on the market
                 </button>
-                <button class="option-button" onclick="selectOption('ownership', 'Yes, co-owner')">
-                    Yes, I co-own it with someone else
+                <button class="option-button" onclick="disqualify('marketStatus', 'Listed with realtor')">
+                    Yes, it's listed with a realtor
                 </button>
-                <button class="option-button" onclick="selectOption('ownership', 'Inherited, in probate')">
-                    I inherited it — it's in probate
-                </button>
-                <button class="option-button" onclick="disqualify('ownership', 'Not the owner')">
-                    No, I don't own the property
+                <button class="option-button" onclick="disqualify('marketStatus', 'For sale by owner')">
+                    Yes, it's listed for sale by owner
                 </button>
             </div>
         </div>
 
-        <!-- Step 3: Timeline -->
+        <!-- Step 3: Property Type -->
         <div class="step" data-step="3">
             <button class="back-button" onclick="goBack()">← Back</button>
             <div class="step-number">Question 3 of 5</div>
-            <h2>How soon do you need to sell?</h2>
+            <h2>What type of property do you have?</h2>
             <div class="button-group">
-                <button class="option-button" onclick="selectOption('timeline', 'ASAP')">
-                    ASAP — I need to sell immediately
+                <button class="option-button" onclick="selectOption('propertyType', 'Single Family')">
+                    Single Family Home
                 </button>
-                <button class="option-button" onclick="selectOption('timeline', 'Within 30 days')">
-                    Within the next 30 days
+                <button class="option-button" onclick="selectOption('propertyType', 'Multi-Family')">
+                    Multi-Family Property
                 </button>
-                <button class="option-button" onclick="selectOption('timeline', '1-3 months')">
-                    Within 1–3 months
+                <button class="option-button" onclick="disqualify('propertyType', 'Condo/Townhouse')">
+                    Condo / Townhouse
                 </button>
-                <button class="option-button" onclick="selectOption('timeline', 'Just exploring')">
-                    No rush — just exploring my options
+                <button class="option-button" onclick="disqualify('propertyType', 'Mobile Home')">
+                    Mobile Home
+                </button>
+                <button class="option-button" onclick="disqualify('propertyType', 'Commercial')">
+                    Commercial Property
+                </button>
+                <button class="option-button" onclick="disqualify('propertyType', 'Land')">
+                    Land / Vacant Lot
                 </button>
             </div>
         </div>
 
-        <!-- Step 4: Occupancy -->
+        <!-- Step 4: Motivation -->
         <div class="step" data-step="4">
             <button class="back-button" onclick="goBack()">← Back</button>
             <div class="step-number">Question 4 of 5</div>
-            <h2>Who currently lives in the property?</h2>
+            <h2>What's your primary reason for selling?</h2>
             <div class="button-group">
-                <button class="option-button" onclick="selectOption('occupancy', 'Vacant')">
-                    It's vacant — no one lives there
+                <button class="option-button" onclick="selectOption('motivation', 'Inheritance')">
+                    Inheritance
                 </button>
-                <button class="option-button" onclick="selectOption('occupancy', 'Owner occupied')">
-                    I live there
+                <button class="option-button" onclick="selectOption('motivation', 'Foreclosure')">
+                    Foreclosure
                 </button>
-                <button class="option-button" onclick="selectOption('occupancy', 'Tenant occupied')">
-                    Tenants currently live there
+                <button class="option-button" onclick="selectOption('motivation', 'Downsizing')">
+                    Downsizing
                 </button>
-                <button class="option-button" onclick="selectOption('occupancy', 'Family member')">
-                    A family member lives there
+                <button class="option-button" onclick="selectOption('motivation', 'Relocation')">
+                    Relocation
+                </button>
+                <button class="option-button" onclick="selectOption('motivation', 'Financial hardship')">
+                    Financial hardship
+                </button>
+                <button class="option-button" onclick="selectOption('motivation', 'Other')">
+                    Other
                 </button>
             </div>
         </div>
 
-        <!-- Step 5: Estimated Value -->
+        <!-- Step 5: Condition -->
         <div class="step" data-step="5">
             <button class="back-button" onclick="goBack()">← Back</button>
             <div class="step-number">Question 5 of 5</div>
-            <h2>What do you think the property is worth?</h2>
+            <h2>How would you describe your home's condition?</h2>
             <div class="button-group">
-                <button class="option-button" onclick="selectOption('estimatedValue', 'Under $100K')">
-                    Under $100,000
+                <button class="option-button" onclick="selectOption('condition', 'Move-in ready')">
+                    Move-in ready — Updated and well-maintained
                 </button>
-                <button class="option-button" onclick="selectOption('estimatedValue', '$100K-$200K')">
-                    $100,000 – $200,000
+                <button class="option-button" onclick="selectOption('condition', 'Livable but dated')">
+                    Livable but dated — Needs cosmetic updates
                 </button>
-                <button class="option-button" onclick="selectOption('estimatedValue', '$200K-$350K')">
-                    $200,000 – $350,000
+                <button class="option-button" onclick="selectOption('condition', 'Needs repairs')">
+                    Needs repairs — Minor to moderate work required
                 </button>
-                <button class="option-button" onclick="selectOption('estimatedValue', '$350K-$500K')">
-                    $350,000 – $500,000
-                </button>
-                <button class="option-button" onclick="selectOption('estimatedValue', 'Over $500K')">
-                    Over $500,000
-                </button>
-                <button class="option-button" onclick="selectOption('estimatedValue', 'Not sure')">
-                    I'm not sure
+                <button class="option-button" onclick="selectOption('condition', 'Major repairs needed')">
+                    Major repairs needed — Significant renovation required
                 </button>
             </div>
         </div>
@@ -315,8 +318,8 @@
         <div class="step" data-step="disqualify">
             <div class="disqualify-message">
                 <h2>Thank you for your interest</h2>
-                <p>Unfortunately, we are not able to make an offer on this property at this time.</p>
-                <p>We appreciate you reaching out and wish you the best.</p>
+                <p>Unfortunately, we are not currently purchasing properties that match your criteria.</p>
+                <p>We appreciate you reaching out and wish you the best in selling your property.</p>
             </div>
         </div>
     </div>
