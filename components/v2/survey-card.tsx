@@ -280,8 +280,8 @@ export function SurveyCard({ initialAddress }: SurveyCardProps = {}) {
     const county = details.county || ""
 
     const stateOk = config.serviceStates.length === 0 || config.serviceStates.includes(state)
-    const countyOk = !config.serviceArea || config.serviceArea === "Your Area" || county.toLowerCase().includes(config.serviceArea.toLowerCase())
-    if (stateOk && countyOk) {
+    
+    if (stateOk) {
       setTimeout(() => { setStep(2) }, 300)
       return
     }
