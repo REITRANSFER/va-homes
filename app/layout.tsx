@@ -23,8 +23,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   const accentColor = process.env.NEXT_PUBLIC_ACCENT_COLOR || "#2563eb"
+  const secondaryColor = process.env.NEXT_PUBLIC_SECONDARY_COLOR || accentColor
   return (
-    <html lang="en" style={{ "--accent-brand": accentColor } as React.CSSProperties}>
+    <html lang="en" style={{ "--accent-brand": accentColor, "--accent-secondary": secondaryColor } as React.CSSProperties}>
       <body className={`font-sans antialiased ${plusJakartaSans.className}`}>
         <FacebookPixel />
         {children}
