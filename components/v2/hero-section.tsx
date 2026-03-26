@@ -82,7 +82,7 @@ export function HeroSection() {
               </div>
               <button
                 onClick={() => { if (addressVerified) setShowSurvey(true) }}
-                className="w-full h-14 bg-[var(--accent-brand)] hover:bg-[var(--accent-brand)/90] text-white font-semibold text-xl rounded-2xl transition-all shadow-lg shadow-[var(--accent-brand)]/20 flex items-center justify-center gap-2"
+                className="w-full h-14 bg-[var(--accent-secondary)] hover:bg-[var(--accent-secondary)/90] text-white font-semibold text-xl rounded-2xl transition-all shadow-lg shadow-[var(--accent-secondary)]/20 flex items-center justify-center gap-2"
               >
                 Get My Free Cash Offer
                 <ArrowRight className="h-6 w-6" />
