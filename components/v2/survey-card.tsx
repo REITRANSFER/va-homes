@@ -299,8 +299,8 @@ export function SurveyCard({ initialAddress }: SurveyCardProps = {}) {
       onClick={() => handleOptionSelect(field, option.id)}
       className={`w-full rounded-xl border px-4 py-3 md:px-5 md:py-4 text-left text-base md:text-lg font-medium transition-all ${
         selectedValue === option.id
-          ? "border-[#1B2A4A] bg-[#1B2A4A]/10 text-[#0F1D2F]"
-          : "border-[#E2E8F0] bg-white text-[#0F1D2F] hover:border-[#1B2A4A]/50 hover:bg-[#F5F7FA]"
+          ? "border-[var(--accent-brand)] bg-[var(--accent-brand)]/10 text-[#0F1D2F]"
+          : "border-[#E2E8F0] bg-white text-[#0F1D2F] hover:border-[var(--accent-brand)]/50 hover:bg-[#F5F7FA]"
       }`}
     >
       {option.label}
@@ -350,7 +350,7 @@ export function SurveyCard({ initialAddress }: SurveyCardProps = {}) {
           </div>
           <a
             href={`tel:${config.phoneHref}`}
-            className="mt-2 inline-flex items-center gap-2 rounded-xl bg-[#1B2A4A] px-8 py-4 text-lg text-white hover:bg-[#131E36] transition-colors"
+            className="mt-2 inline-flex items-center gap-2 rounded-xl bg-[var(--accent-brand)] px-8 py-4 text-lg text-white hover:bg-[var(--accent-brand)/90] transition-colors"
           >
             {`Call Us: ${config.companyName}`}
           </a>
@@ -394,7 +394,7 @@ export function SurveyCard({ initialAddress }: SurveyCardProps = {}) {
         {/* Progress indicator */}
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Home className="h-5 w-5 text-[#1B2A4A]" />
+            <Home className="h-5 w-5 text-[var(--accent-brand)]" />
             <span className="text-base text-[#5A6B7D]">Step {step} of {totalSteps}</span>
           </div>
           <div className="flex gap-1">
@@ -402,7 +402,7 @@ export function SurveyCard({ initialAddress }: SurveyCardProps = {}) {
               <div
                 key={i}
                 className={`h-1.5 w-6 rounded-full transition-colors ${
-                  i < step ? "bg-[#1B2A4A]" : "bg-gray-200"
+                  i < step ? "bg-[var(--accent-brand)]" : "bg-gray-200"
                 }`}
               />
             ))}
@@ -417,7 +417,7 @@ export function SurveyCard({ initialAddress }: SurveyCardProps = {}) {
               <p className="mt-1 text-base text-[#5A6B7D]">Start typing and select your address from the dropdown.</p>
             </div>
             <div className="flex justify-center -mb-2">
-              <ArrowDown className="h-6 w-6 text-[#1B2A4A] animate-bounce" />
+              <ArrowDown className="h-6 w-6 text-[var(--accent-brand)] animate-bounce" />
             </div>
             <AddressAutocomplete
               value={surveyData.address}
@@ -428,7 +428,7 @@ export function SurveyCard({ initialAddress }: SurveyCardProps = {}) {
             <Button
               onClick={handleNext}
               disabled={!canProceed()}
-              className="w-full h-14 bg-[#1B2A4A] text-white text-lg font-semibold rounded-xl hover:bg-[#131E36] disabled:opacity-40 transition-all shadow-md hover:shadow-lg"
+              className="w-full h-14 bg-[var(--accent-brand)] text-white text-lg font-semibold rounded-xl hover:bg-[var(--accent-brand)/90] disabled:opacity-40 transition-all shadow-md hover:shadow-lg"
             >
               Get My Cash Offer
               <ArrowRight className="ml-2 h-5 w-5" />
@@ -541,7 +541,7 @@ export function SurveyCard({ initialAddress }: SurveyCardProps = {}) {
                     placeholder="First name"
                     value={surveyData.firstName}
                     onChange={(e) => { setSurveyData({ ...surveyData, firstName: e.target.value }); setValidationErrors({ ...validationErrors, firstName: "" }) }}
-                    className={`h-14 text-lg rounded-xl border-[#E2E8F0] bg-white text-[#0F1D2F] placeholder:text-[#94A3B8] focus:border-[#1B2A4A] focus:ring-[#1B2A4A]/20 ${validationErrors.firstName ? "border-red-500" : ""}`}
+                    className={`h-14 text-lg rounded-xl border-[#E2E8F0] bg-white text-[#0F1D2F] placeholder:text-[#94A3B8] focus:border-[var(--accent-brand)] focus:ring-[#1B2A4A]/20 ${validationErrors.firstName ? "border-red-500" : ""}`}
                   />
                   {validationErrors.firstName && <p className="mt-1 text-xs text-red-500">{validationErrors.firstName}</p>}
                 </div>
@@ -550,7 +550,7 @@ export function SurveyCard({ initialAddress }: SurveyCardProps = {}) {
                     placeholder="Last name"
                     value={surveyData.lastName}
                     onChange={(e) => { setSurveyData({ ...surveyData, lastName: e.target.value }); setValidationErrors({ ...validationErrors, lastName: "" }) }}
-                    className={`h-14 text-lg rounded-xl border-[#E2E8F0] bg-white text-[#0F1D2F] placeholder:text-[#94A3B8] focus:border-[#1B2A4A] focus:ring-[#1B2A4A]/20 ${validationErrors.lastName ? "border-red-500" : ""}`}
+                    className={`h-14 text-lg rounded-xl border-[#E2E8F0] bg-white text-[#0F1D2F] placeholder:text-[#94A3B8] focus:border-[var(--accent-brand)] focus:ring-[#1B2A4A]/20 ${validationErrors.lastName ? "border-red-500" : ""}`}
                   />
                   {validationErrors.lastName && <p className="mt-1 text-xs text-red-500">{validationErrors.lastName}</p>}
                 </div>
@@ -561,7 +561,7 @@ export function SurveyCard({ initialAddress }: SurveyCardProps = {}) {
                   placeholder="Email address"
                   value={surveyData.email}
                   onChange={(e) => { setSurveyData({ ...surveyData, email: e.target.value }); setValidationErrors({ ...validationErrors, email: "" }) }}
-                  className={`h-14 text-lg rounded-xl border-[#E2E8F0] bg-white text-[#0F1D2F] placeholder:text-[#94A3B8] focus:border-[#1B2A4A] focus:ring-[#1B2A4A]/20 ${validationErrors.email ? "border-red-500" : ""}`}
+                  className={`h-14 text-lg rounded-xl border-[#E2E8F0] bg-white text-[#0F1D2F] placeholder:text-[#94A3B8] focus:border-[var(--accent-brand)] focus:ring-[#1B2A4A]/20 ${validationErrors.email ? "border-red-500" : ""}`}
                 />
                 {validationErrors.email && <p className="mt-1 text-xs text-red-500">{validationErrors.email}</p>}
               </div>
@@ -572,7 +572,7 @@ export function SurveyCard({ initialAddress }: SurveyCardProps = {}) {
                   value={surveyData.phone}
                   onChange={(e) => { setSurveyData({ ...surveyData, phone: formatPhoneNumber(e.target.value) }); setValidationErrors({ ...validationErrors, phone: "" }) }}
                   maxLength={14}
-                  className={`h-14 text-lg rounded-xl border-[#E2E8F0] bg-white text-[#0F1D2F] placeholder:text-[#94A3B8] focus:border-[#1B2A4A] focus:ring-[#1B2A4A]/20 ${validationErrors.phone ? "border-red-500" : ""}`}
+                  className={`h-14 text-lg rounded-xl border-[#E2E8F0] bg-white text-[#0F1D2F] placeholder:text-[#94A3B8] focus:border-[var(--accent-brand)] focus:ring-[#1B2A4A]/20 ${validationErrors.phone ? "border-red-500" : ""}`}
                 />
                 {validationErrors.phone && <p className="mt-1 text-xs text-red-500">{validationErrors.phone}</p>}
               </div>
@@ -604,7 +604,7 @@ export function SurveyCard({ initialAddress }: SurveyCardProps = {}) {
           <Button
             onClick={handleNext}
             disabled={!canProceed() || isSubmitting}
-            className="bg-[#1B2A4A] text-white text-lg px-8 py-3 hover:bg-[#131E36] disabled:opacity-50"
+            className="bg-[var(--accent-brand)] text-white text-lg px-8 py-3 hover:bg-[var(--accent-brand)/90] disabled:opacity-50"
           >
             {isSubmitting ? (
               <span className="flex items-center gap-2">
