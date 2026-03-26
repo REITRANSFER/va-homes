@@ -541,7 +541,7 @@ export function SurveyCard({ initialAddress }: SurveyCardProps = {}) {
                     placeholder="First name"
                     value={surveyData.firstName}
                     onChange={(e) => { setSurveyData({ ...surveyData, firstName: e.target.value }); setValidationErrors({ ...validationErrors, firstName: "" }) }}
-                    className={`h-14 text-lg rounded-xl border-[#E2E8F0] bg-white text-[#0F1D2F] placeholder:text-[#94A3B8] focus:border-[var(--accent-brand)] focus:ring-[#1B2A4A]/20 ${validationErrors.firstName ? "border-red-500" : ""}`}
+                    className={`h-14 text-lg rounded-xl border-[#E2E8F0] bg-white text-[#0F1D2F] placeholder:text-[#94A3B8] focus:border-[var(--accent-brand)] focus:ring-[var(--accent-brand)/20] ${validationErrors.firstName ? "border-red-500" : ""}`}
                   />
                   {validationErrors.firstName && <p className="mt-1 text-xs text-red-500">{validationErrors.firstName}</p>}
                 </div>
@@ -550,7 +550,7 @@ export function SurveyCard({ initialAddress }: SurveyCardProps = {}) {
                     placeholder="Last name"
                     value={surveyData.lastName}
                     onChange={(e) => { setSurveyData({ ...surveyData, lastName: e.target.value }); setValidationErrors({ ...validationErrors, lastName: "" }) }}
-                    className={`h-14 text-lg rounded-xl border-[#E2E8F0] bg-white text-[#0F1D2F] placeholder:text-[#94A3B8] focus:border-[var(--accent-brand)] focus:ring-[#1B2A4A]/20 ${validationErrors.lastName ? "border-red-500" : ""}`}
+                    className={`h-14 text-lg rounded-xl border-[#E2E8F0] bg-white text-[#0F1D2F] placeholder:text-[#94A3B8] focus:border-[var(--accent-brand)] focus:ring-[var(--accent-brand)/20] ${validationErrors.lastName ? "border-red-500" : ""}`}
                   />
                   {validationErrors.lastName && <p className="mt-1 text-xs text-red-500">{validationErrors.lastName}</p>}
                 </div>
@@ -561,7 +561,7 @@ export function SurveyCard({ initialAddress }: SurveyCardProps = {}) {
                   placeholder="Email address"
                   value={surveyData.email}
                   onChange={(e) => { setSurveyData({ ...surveyData, email: e.target.value }); setValidationErrors({ ...validationErrors, email: "" }) }}
-                  className={`h-14 text-lg rounded-xl border-[#E2E8F0] bg-white text-[#0F1D2F] placeholder:text-[#94A3B8] focus:border-[var(--accent-brand)] focus:ring-[#1B2A4A]/20 ${validationErrors.email ? "border-red-500" : ""}`}
+                  className={`h-14 text-lg rounded-xl border-[#E2E8F0] bg-white text-[#0F1D2F] placeholder:text-[#94A3B8] focus:border-[var(--accent-brand)] focus:ring-[var(--accent-brand)/20] ${validationErrors.email ? "border-red-500" : ""}`}
                 />
                 {validationErrors.email && <p className="mt-1 text-xs text-red-500">{validationErrors.email}</p>}
               </div>
@@ -572,7 +572,7 @@ export function SurveyCard({ initialAddress }: SurveyCardProps = {}) {
                   value={surveyData.phone}
                   onChange={(e) => { setSurveyData({ ...surveyData, phone: formatPhoneNumber(e.target.value) }); setValidationErrors({ ...validationErrors, phone: "" }) }}
                   maxLength={14}
-                  className={`h-14 text-lg rounded-xl border-[#E2E8F0] bg-white text-[#0F1D2F] placeholder:text-[#94A3B8] focus:border-[var(--accent-brand)] focus:ring-[#1B2A4A]/20 ${validationErrors.phone ? "border-red-500" : ""}`}
+                  className={`h-14 text-lg rounded-xl border-[#E2E8F0] bg-white text-[#0F1D2F] placeholder:text-[#94A3B8] focus:border-[var(--accent-brand)] focus:ring-[var(--accent-brand)/20] ${validationErrors.phone ? "border-red-500" : ""}`}
                 />
                 {validationErrors.phone && <p className="mt-1 text-xs text-red-500">{validationErrors.phone}</p>}
               </div>
