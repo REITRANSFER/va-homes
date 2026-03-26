@@ -38,15 +38,15 @@ export function HeroSection() {
         {/* Trust badges */}
         <div className="hidden md:flex flex-wrap items-center justify-center gap-6 mb-6 animate-reveal-up">
           <div className="flex items-center gap-2 text-[#5A6B7D] text-base">
-            <Shield className="h-4 w-4 text-[#1B2A4A]" />
+            <Shield className="h-4 w-4 text-[var(--accent-brand)]" />
             <span>Trusted</span>
           </div>
           <div className="flex items-center gap-2 text-[#5A6B7D] text-base">
-            <Clock className="h-4 w-4 text-[#1B2A4A]" />
+            <Clock className="h-4 w-4 text-[var(--accent-brand)]" />
             <span>24-Hour Cash Offers</span>
           </div>
           <div className="flex items-center gap-2 text-[#5A6B7D] text-base">
-            <DollarSign className="h-4 w-4 text-[#1B2A4A]" />
+            <DollarSign className="h-4 w-4 text-[var(--accent-brand)]" />
             <span>No Fees. No Commissions.</span>
           </div>
         </div>
@@ -67,8 +67,8 @@ export function HeroSection() {
           {!showSurvey ? (
             <div className="flex flex-col gap-3">
               <div className="flex flex-col items-center gap-1">
-                <span className="text-[#1B2A4A] text-base font-medium">Enter your address to start</span>
-                <ArrowDown className="h-5 w-5 text-[#1B2A4A] animate-bounce" />
+                <span className="text-[var(--accent-brand)] text-base font-medium">Enter your address to start</span>
+                <ArrowDown className="h-5 w-5 text-[var(--accent-brand)] animate-bounce" />
               </div>
               <div className="relative">
                 <AddressAutocomplete
@@ -77,12 +77,12 @@ export function HeroSection() {
                   onSelect={handleAddressSelect}
                   placeholder={`Enter your ${config.serviceArea} area address...`}
                   bounds={config.serviceBounds || undefined}
-                  className="[&_input]:h-14 [&_input]:text-lg [&_input]:rounded-2xl [&_input]:shadow-lg [&_input]:border-[#1B2A4A]/30 [&_input]:bg-white"
+                  className="[&_input]:h-14 [&_input]:text-lg [&_input]:rounded-2xl [&_input]:shadow-lg [&_input]:border-[var(--accent-brand)]/30 [&_input]:bg-white"
                 />
               </div>
               <button
                 onClick={() => { if (addressVerified) setShowSurvey(true) }}
-                className="w-full h-14 bg-[#1B2A4A] hover:bg-[#131E36] text-white font-semibold text-xl rounded-2xl transition-all shadow-lg shadow-[#1B2A4A]/20 flex items-center justify-center gap-2"
+                className="w-full h-14 bg-[var(--accent-brand)] hover:bg-[var(--accent-brand)/90] text-white font-semibold text-xl rounded-2xl transition-all shadow-lg shadow-[var(--accent-brand)]/20 flex items-center justify-center gap-2"
               >
                 Get My Free Cash Offer
                 <ArrowRight className="h-6 w-6" />
