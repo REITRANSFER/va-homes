@@ -350,7 +350,7 @@ export function SurveyCard({ initialAddress }: SurveyCardProps = {}) {
           </div>
           <a
             href={`tel:${config.phoneHref}`}
-            className="mt-2 inline-flex items-center gap-2 rounded-xl bg-[var(--accent-brand)] px-8 py-4 text-lg text-white hover:bg-[var(--accent-brand)/90] transition-colors"
+            className="mt-2 inline-flex items-center gap-2 rounded-xl bg-[var(--accent-secondary)] px-8 py-4 text-lg text-white hover:bg-[var(--accent-secondary)/90] transition-colors"
           >
             {`Call Us: ${config.companyName}`}
           </a>
@@ -428,7 +428,7 @@ export function SurveyCard({ initialAddress }: SurveyCardProps = {}) {
             <Button
               onClick={handleNext}
               disabled={!canProceed()}
-              className="w-full h-14 bg-[var(--accent-brand)] text-white text-lg font-semibold rounded-xl hover:bg-[var(--accent-brand)/90] disabled:opacity-40 transition-all shadow-md hover:shadow-lg"
+              className="w-full h-14 bg-[var(--accent-secondary)] text-white text-lg font-semibold rounded-xl hover:bg-[var(--accent-secondary)/90] disabled:opacity-40 transition-all shadow-md hover:shadow-lg"
             >
               Get My Cash Offer
               <ArrowRight className="ml-2 h-5 w-5" />
@@ -604,7 +604,7 @@ export function SurveyCard({ initialAddress }: SurveyCardProps = {}) {
           <Button
             onClick={handleNext}
             disabled={!canProceed() || isSubmitting}
-            className="bg-[var(--accent-brand)] text-white text-lg px-8 py-3 hover:bg-[var(--accent-brand)/90] disabled:opacity-50"
+            className="bg-[var(--accent-secondary)] text-white text-lg px-8 py-3 hover:bg-[var(--accent-secondary)/90] disabled:opacity-50"
           >
             {isSubmitting ? (
               <span className="flex items-center gap-2">
