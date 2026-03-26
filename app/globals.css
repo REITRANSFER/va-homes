@@ -136,7 +136,7 @@
   --card-foreground: #0F1D2F;
   --popover: #FFFFFF;
   --popover-foreground: #0F1D2F;
-  --primary: #1B2A4A;
+  --primary: var(--accent-brand);
   --primary-foreground: #FFFFFF;
   --secondary: #F5F7FA;
   --secondary-foreground: #0F1D2F;
@@ -148,7 +148,7 @@
   --destructive-foreground: #FFFFFF;
   --border: #E2E8F0;
   --input: #FFFFFF;
-  --ring: #1B2A4A;
+  --ring: var(--accent-brand);
   background-color: #FFFFFF;
   color: #0F1D2F;
 }
