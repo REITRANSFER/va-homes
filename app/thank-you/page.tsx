@@ -62,7 +62,7 @@ export default function ThankYouPage() {
         <div className="mx-auto max-w-2xl px-4 text-center">
           <h2 className="text-2xl font-bold text-gray-900">Have Questions?</h2>
           <p className="mt-2 text-gray-600">Our team is ready to help you every step of the way.</p>
-          <a href={`tel:${config.phoneHref}`} className="mt-6 inline-flex items-center gap-2 rounded-full px-8 py-3 text-lg font-semibold text-white transition-colors" style={{ backgroundColor: "var(--accent-brand)" }}>
+          <a href={`tel:${config.phoneHref}`} className="mt-6 inline-flex items-center gap-2 rounded-full px-8 py-3 text-lg font-semibold text-white transition-colors" style={{ backgroundColor: "var(--accent-secondary)" }}>
             <Phone className="h-5 w-5" />
             Call {config.phoneDisplay}
           </a>
