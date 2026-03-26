@@ -61,7 +61,7 @@ export function Header() {
                 </div>
                 <button
                   onClick={() => { if (address.trim()) setShowSurvey(true); }}
-                  className="shrink-0 h-9 px-4 bg-[#1B2A4A] hover:bg-[#131E36] text-white text-sm font-medium rounded-lg transition-colors flex items-center gap-1.5"
+                  className="shrink-0 h-9 px-4 bg-[var(--accent-brand)] hover:bg-[var(--accent-brand)/90] text-white text-sm font-medium rounded-lg transition-colors flex items-center gap-1.5"
                 >
                   Go
                   <ArrowRight className="h-3.5 w-3.5" />
@@ -73,7 +73,7 @@ export function Header() {
           {pastHero && !showSurvey && (
             <button
               onClick={() => setShowSurvey(true)}
-              className="md:hidden px-4 py-1.5 text-xs font-medium rounded-full bg-[#1B2A4A] text-white"
+              className="md:hidden px-4 py-1.5 text-xs font-medium rounded-full bg-[var(--accent-brand)] text-white"
             >
               Get Offer
             </button>
@@ -90,7 +90,7 @@ export function Header() {
           {!pastHero && (
             <button
               onClick={() => setShowSurvey(true)}
-              className="px-5 py-2 text-sm font-medium transition-all rounded-full bg-[#1B2A4A] text-white hover:bg-[#131E36]"
+              className="px-5 py-2 text-sm font-medium transition-all rounded-full bg-[var(--accent-brand)] text-white hover:bg-[var(--accent-brand)/90]"
             >
               Get Cash Offer
             </button>
