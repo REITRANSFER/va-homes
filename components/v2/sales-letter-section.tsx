@@ -139,7 +139,7 @@ export function SalesLetterSection() {
             const [title, desc] = p.content.split("|");
             return (
               <div key={i} data-paragraph={i} className={`flex gap-4 mb-6 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
-                <div className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-lg font-bold text-white" style={{ backgroundColor: "var(--accent-brand)" }}>
+                <div className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-lg font-bold text-white" style={{ backgroundColor: "var(--accent-secondary)" }}>
                   {stepCounter}
                 </div>
                 <div>
@@ -155,7 +155,7 @@ export function SalesLetterSection() {
                 <button
                   onClick={() => document.getElementById("hero")?.scrollIntoView({ behavior: "smooth" })}
                   className="inline-flex items-center gap-2 text-white font-semibold text-xl px-12 py-5 rounded-2xl transition-all"
-                  style={{ backgroundColor: "var(--accent-brand)" }}
+                  style={{ backgroundColor: "var(--accent-secondary)" }}
                 >
                   {p.content}
                 </button>
