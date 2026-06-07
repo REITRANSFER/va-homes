@@ -286,6 +286,13 @@ export function SurveyCard({ initialAddress }: SurveyCardProps = {}) {
         console.error('Submit error:', e)
       }
 
+      // Give the fbq queue a moment to flush before the page unloads. If
+      // fbevents.js is still loading at submit time, the Lead event sits in
+      // the queue and dies on navigation. 350ms is enough to flush typical
+      // queued events while staying imperceptible to the user. The /api/submit
+      // call has already fired the server-side CAPI Lead with a shared
+      // event_id, so even if the pixel still misses, attribution survives.
+      await new Promise(r => setTimeout(r, 350))
       window.location.href = '/thank-you'
     } else if (step < totalSteps) {
       setStep(step + 1)
