@@ -1,6 +1,6 @@
 /**
  * VA Home Offer — Virginia
- * Dynamic-headline override table for /v2 landing page.
+ * Dynamic-headline override table for / and /v2 landing pages.
  *
  * Each entry's `match` regex is tested against the sanitized `utm_content`
  * (= ad.name per locked URL params convention). First match wins.
@@ -71,6 +71,93 @@ export const HEADLINE_OVERRIDES: HeadlineOverride[] = [
     match: /^D2-AgentVsCash-/i,
     h1: "Would You Rather Wait 60 Days Or Get Cash In 14?",
     sub: "Most Virginia owners 45+ are skipping the listing. Same price at closing, no commissions.",
+  },
+
+  // ===== Condition-distressed motivated-seller relaunch (2026-06-09) =====
+  // E-series = condition angles. J-series = Jenkins formats.
+  // E1 — WrongNumber
+  {
+    match: /^E1-WrongNumber-/i,
+    h1: "Your House Isn't Worthless. You're Wrong About The Number.",
+    sub: "Rough condition lowers the number. It doesn't make it zero. See yours in 24 hours.",
+  },
+  // E2 — NumberHolds
+  {
+    match: /^E2-NumberHolds-/i,
+    h1: "The Number We Put In Writing Is The Number You Get.",
+    sub: "No surprise inspection, no re-trade. A written Virginia cash offer that holds to closing.",
+  },
+  // E3 — OfferCaves
+  {
+    match: /^E3-OfferCaves-/i,
+    h1: "Most Cash Offers Drop After You Say Yes. Ours Doesn't.",
+    sub: "We price the condition up front and put it in writing. See a number that holds.",
+  },
+  // E4 — NotPermission
+  {
+    match: /^E4-NotPermission-/i,
+    h1: "A Rough House Isn't Permission To Steal Your Equity.",
+    sub: "Get a real written number for your Virginia home, exactly as it sits. No lowball.",
+  },
+  // E5 — AsItSits
+  {
+    match: /^E5-AsItSits-/i,
+    h1: "Sell Your Virginia House Exactly As It Sits.",
+    sub: "No repairs. No cleanout. No showings. Nothing out of pocket. 14-day cash close.",
+  },
+  // E6 — NoJudgment
+  {
+    match: /^E6-NoJudgment-/i,
+    h1: "Embarrassed By The Condition? No Judgment. Just A Way Out.",
+    sub: "We've bought worse. Sell your Virginia house as-is, privately, for cash.",
+  },
+  // E7 — WontPassInspect
+  {
+    match: /^E7-WontPassInspect-/i,
+    h1: "Won't Pass Inspection? That's Exactly Why We're A Fit.",
+    sub: "No loan, no appraisal to fail. We buy Virginia houses as-is and close in 14 days.",
+  },
+  // E8 — Inherited
+  {
+    match: /^E8-Inherited-/i,
+    h1: "Inherited A Virginia House You Can't Face? Hand Us The Keys.",
+    sub: "No cleanout, no repairs, no trips back. We buy it as-is, with everything still inside.",
+  },
+  // E9 — Foreclosure
+  {
+    match: /^E9-Foreclosure-/i,
+    h1: "Behind On Payments? Walk Away With Something, Not Nothing.",
+    sub: "There's still a window. Sell your Virginia house fast, clear the bank, keep your equity.",
+  },
+  // E10 — AnyCondition
+  {
+    match: /^E10-AnyCondition-/i,
+    h1: "Fire, Flood, Foundation, Mold, Hoard. We'll Buy It.",
+    sub: "We buy Virginia houses in any condition, with everything still attached. Cash in 14 days.",
+  },
+  // E11 — WeightOff
+  {
+    match: /^E11-WeightOff-/i,
+    h1: "The Day It's Sold Is The Day The Weight Comes Off.",
+    sub: "Sell your Virginia house as-is, for cash, and finally set it down. 14-day close.",
+  },
+  // J1 — TwoPaths
+  {
+    match: /^J1-TwoPaths-/i,
+    h1: "Two Paths To The Same Sale. One Costs You Thousands First.",
+    sub: "Skip the repairs and the 60-day wait. Our Virginia cash offer won't change.",
+  },
+  // J2 — PollCard
+  {
+    match: /^J2-PollCard-/i,
+    h1: "Does Your House Need Work You Can't Afford? You Have Options.",
+    sub: "Sell your Virginia house exactly as it sits. Cash offer in 24 hours, close in 14.",
+  },
+  // J3 — OneSale
+  {
+    match: /^J3-OneSale-/i,
+    h1: "One Cash Sale Handles The Roof, The Cleanout, The Taxes.",
+    sub: "All of it, handled. We buy your Virginia house as-is and close in 14 days.",
   },
 ]
 
