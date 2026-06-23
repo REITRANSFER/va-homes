@@ -65,7 +65,7 @@ export default async function V2Page({
   const marketName =
     config.serviceArea && config.serviceArea !== "Your Area"
       ? config.serviceArea
-      : "Virginia";
+      : "your area";
 
   return (
     <>
