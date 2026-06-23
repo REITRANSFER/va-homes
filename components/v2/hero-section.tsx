@@ -41,7 +41,7 @@ export function HeroSection({ h1, sub }: HeroSectionProps = {}) {
 
   return (
     <section id="hero" className="relative bg-white">
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-[100dvh] px-4 py-20 md:px-12 md:py-24 lg:px-20">
+      <div className="relative z-10 flex flex-col items-center justify-start md:justify-center min-h-[100dvh] px-4 pt-28 pb-12 md:px-12 md:py-24 lg:px-20">
         {/* Trust badges */}
         <div className="hidden md:flex flex-wrap items-center justify-center gap-6 mb-6 animate-reveal-up">
           <div className="flex items-center gap-2 text-[#5A6B7D] text-base">
@@ -91,7 +91,7 @@ export function HeroSection({ h1, sub }: HeroSectionProps = {}) {
                   value={initialAddress}
                   onChange={(address) => { setInitialAddress(address); setAddressVerified(false); setOutsideAreaError(false); }}
                   onSelect={handleAddressSelect}
-                  placeholder={`Enter your ${config.serviceArea} area address...`}
+                  placeholder="Enter your property address..."
                   bounds={config.serviceBounds || undefined}
                   className="[&_input]:h-14 [&_input]:text-lg [&_input]:rounded-2xl [&_input]:shadow-lg [&_input]:border-[var(--accent-brand)]/30 [&_input]:bg-white"
                 />
@@ -105,7 +105,7 @@ export function HeroSection({ h1, sub }: HeroSectionProps = {}) {
               </button>
               {outsideAreaError && (
                 <p className="text-center text-sm font-medium" style={{ color: "#dc2626" }}>
-                  {`Sorry, we only buy homes in ${config.serviceArea}. Please enter a local address.`}
+                  {`Sorry, that address is outside our service area. Please enter a local address.`}
                 </p>
               )}
               <p className="text-center text-[#94A3B8] text-sm">
