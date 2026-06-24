@@ -74,10 +74,11 @@ const REASON_OPTIONS = [
   { id: "behind-payments", label: "Behind on payments" },
   { id: "inherited", label: "Inherited property" },
   { id: "divorce", label: "Divorce or separation" },
-  { id: "relocation", label: "Job relocation" },
-  { id: "downsizing", label: "Downsizing" },
   { id: "repairs", label: "Can't afford repairs" },
-  { id: "other", label: "Other" },
+  { id: "vacant", label: "Vacant property I need to sell" },
+  { id: "urgent-financial", label: "Urgent financial situation not listed above" },
+  { id: "life-event", label: "Personal situation not listed above" },
+  { id: "none-of-above", label: "No reason / seeing what my house is worth" },
 ]
 
 // ─── Lead scoring (browser-side, no n8n changes) ───────────────────────
@@ -88,10 +89,10 @@ const SCORE_OWNERSHIP: Record<string, number> = {
   '10-plus-years': 3, '5-10-years': 1, '3-5-years': 0, '1-3-years': 0,
 }
 const SCORE_REASON: Record<string, number> = {
-  'foreclosure': 3, 'behind-payments': 3,
-  'inherited': 2, 'repairs': 2,
-  'other': 1,
-  'relocation': 0, 'divorce': 0, 'downsizing': 0,
+  'foreclosure': 3, 'behind-payments': 3, 'urgent-financial': 3,
+  'inherited': 2, 'repairs': 2, 'vacant': 2, 'divorce': 2,
+  'life-event': 1,
+  'none-of-above': 0,
 }
 const SCORE_CONDITION: Record<string, number> = {
   'poor': 1, 'distressed': 1,
@@ -123,7 +124,7 @@ function disqualifyReasonFor(d: SurveyData): string {
   if (d.condition === 'excellent') return 'excellent_condition'
   return 'unknown'
 }
-// ──────────────────────────────────────────────────────────────────────
+// ───────────────────────────────────────────────────────────────
 
 const DISPOSABLE_DOMAINS = new Set(["mailinator.com","guerrillamail.com","tempmail.com","throwaway.email","yopmail.com","sharklasers.com","guerrillamail.info","grr.la","guerrillamail.biz","guerrillamail.de","guerrillamail.net","guerrillamail.org","spam4.me","trashmail.com","trashmail.me","trashmail.net","mytemp.email","mohmal.com","tempail.com","dispostable.com","maildrop.cc","10minutemail.com","temp-mail.org","fakeinbox.com","mailnesia.com","getnada.com","emailondeck.com","33mail.com","harakirimail.com","jetable.org","meltmail.com","mailcatch.com","tempinbox.com","spamgourmet.com","mailexpire.com","incognitomail.org","getairmail.com","mailnull.com","safeemail.xyz","tempmailo.com","burnermail.io"])
 
